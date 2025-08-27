@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.spatial import ConvexHull
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
+
 class CustomPlotClass:
     def __init__(self):
         pass
@@ -112,8 +113,71 @@ class CustomPlotClass:
 
 
 
-    def draw3DHyperrectanglesWithVertices(self, vertices, title="3D Hyperrectangles", color=None):
-        """Draw 3D Hyperrectangles using vertex arrays."""
+    # def draw3DHyperrectanglesWithVertices(self, vertices, title="3D Hyperrectangles", color=None):
+    #     """Draw 3D Hyperrectangles using vertex arrays."""
+    #     if not isinstance(vertices, list) or len(vertices) == 0:
+    #         raise ValueError("Input must be a non-empty list of vertex arrays.")
+
+    #     fig = plt.figure()
+    #     ax = fig.add_subplot(111, projection="3d")
+
+    #     if color is None:
+    #         colors = plt.cm.tab10(np.linspace(0, 1, len(vertices)))
+
+    #     for i, verts in enumerate(vertices):
+    #         hull = ConvexHull(verts)
+    #         faces = [verts[simplex] for simplex in hull.simplices]  # use all simplices for faces
+    #         faceColor = colors[i] if color is None else color
+    #         ax.add_collection3d(Poly3DCollection(faces, facecolors=faceColor, linewidths=1, edgecolors='k', alpha=0.3))
+
+    #     ax.scatter(np.vstack(vertices)[:,0], np.vstack(vertices)[:,1], np.vstack(vertices)[:,2], color='k')
+    #     ax.set_xlabel("X")
+    #     ax.set_ylabel("Y")
+    #     ax.set_zlabel("Z")
+    #     ax.set_title(title)
+    #     plt.show()
+
+
+    
+
+    # def drawDual3DHyperrectanglesWithVertices(self, vertices1, vertices2, title="3D Hyperrectangles", color1=None, color2=None):
+    #     """Draw two sets of 3D Hyperrectangles together."""
+    #     if not isinstance(vertices1, list) or len(vertices1) == 0:
+    #         raise ValueError("Input must be a non-empty list of vertex arrays.")
+    #     if not isinstance(vertices2, list) or len(vertices2) == 0:
+    #         raise ValueError("Input must be a non-empty list of vertex arrays.")
+
+    #     fig = plt.figure()
+    #     ax = fig.add_subplot(111, projection="3d")
+
+    #     if color1 is None:
+    #         color1 = np.random.rand(3,)
+    #     if color2 is None:
+    #         color2 = np.random.rand(3,)
+
+    #     for verts in vertices1:
+    #         hull = ConvexHull(verts)
+    #         faces = [verts[simplex] for simplex in hull.simplices]
+    #         ax.add_collection3d(Poly3DCollection(faces, facecolors=color1, linewidths=1, edgecolors='k', alpha=0.3))
+
+    #     for verts in vertices2:
+    #         hull = ConvexHull(verts)
+    #         faces = [verts[simplex] for simplex in hull.simplices]
+    #         ax.add_collection3d(Poly3DCollection(faces, facecolors=color2, linewidths=1, edgecolors='k', alpha=0.3))
+
+    #     ax.scatter(np.vstack(vertices1 + vertices2)[:,0], np.vstack(vertices1 + vertices2)[:,1],
+    #                np.vstack(vertices1 + vertices2)[:,2], color='k')
+    #     ax.set_xlabel("X")
+    #     ax.set_ylabel("Y")
+    #     ax.set_zlabel("Z")
+    #     ax.set_title(title)
+    #     plt.show()
+
+
+    
+    def draw3DHyperrectanglesWithVertices(self, vertices, title="3D Hyperrectangles",
+                                          color=None, interactive=False):
+        """Draw 3D Hyperrectangles with optional interactivity."""
         if not isinstance(vertices, list) or len(vertices) == 0:
             raise ValueError("Input must be a non-empty list of vertex arrays.")
 
@@ -125,20 +189,36 @@ class CustomPlotClass:
 
         for i, verts in enumerate(vertices):
             hull = ConvexHull(verts)
-            faces = [verts[simplex] for simplex in hull.simplices]  # use all simplices for faces
+            faces = [verts[simplex] for simplex in hull.simplices]
             faceColor = colors[i] if color is None else color
-            ax.add_collection3d(Poly3DCollection(faces, facecolors=faceColor, linewidths=1, edgecolors='k', alpha=0.3))
+            ax.add_collection3d(
+                Poly3DCollection(faces, facecolors=faceColor,
+                                 linewidths=1, edgecolors='k', alpha=0.3)
+            )
 
-        ax.scatter(np.vstack(vertices)[:,0], np.vstack(vertices)[:,1], np.vstack(vertices)[:,2], color='k')
+        ax.scatter(np.vstack(vertices)[:, 0],
+                   np.vstack(vertices)[:, 1],
+                   np.vstack(vertices)[:, 2], color='k')
+
         ax.set_xlabel("X")
         ax.set_ylabel("Y")
         ax.set_zlabel("Z")
         ax.set_title(title)
-        plt.show()
 
+        # Handle interactivity
+        if interactive:
+            ax.view_init(elev=20, azim=30)  # initial camera angle
+            plt.ion()
+        else:
+            plt.ioff()
 
-    def drawDual3DHyperrectanglesWithVertices(self, vertices1, vertices2, title="3D Hyperrectangles", color1=None, color2=None):
-        """Draw two sets of 3D Hyperrectangles together."""
+        plt.show(block=True)
+
+    def drawDual3DHyperrectanglesWithVertices(self, vertices1, vertices2,
+                                              title="Dual 3D Hyperrectangles",
+                                              color1=None, color2=None,
+                                              interactive=False):
+        """Draw two sets of 3D Hyperrectangles together with optional interactivity."""
         if not isinstance(vertices1, list) or len(vertices1) == 0:
             raise ValueError("Input must be a non-empty list of vertex arrays.")
         if not isinstance(vertices2, list) or len(vertices2) == 0:
@@ -152,20 +232,39 @@ class CustomPlotClass:
         if color2 is None:
             color2 = np.random.rand(3,)
 
+        # First set
         for verts in vertices1:
             hull = ConvexHull(verts)
             faces = [verts[simplex] for simplex in hull.simplices]
-            ax.add_collection3d(Poly3DCollection(faces, facecolors=color1, linewidths=1, edgecolors='k', alpha=0.3))
+            ax.add_collection3d(
+                Poly3DCollection(faces, facecolors=color1,
+                                 linewidths=1, edgecolors='k', alpha=0.3)
+            )
 
+        # Second set
         for verts in vertices2:
             hull = ConvexHull(verts)
             faces = [verts[simplex] for simplex in hull.simplices]
-            ax.add_collection3d(Poly3DCollection(faces, facecolors=color2, linewidths=1, edgecolors='k', alpha=0.3))
+            ax.add_collection3d(
+                Poly3DCollection(faces, facecolors=color2,
+                                 linewidths=1, edgecolors='k', alpha=0.3)
+            )
 
-        ax.scatter(np.vstack(vertices1 + vertices2)[:,0], np.vstack(vertices1 + vertices2)[:,1],
-                   np.vstack(vertices1 + vertices2)[:,2], color='k')
+        # Scatter points
+        ax.scatter(np.vstack(vertices1 + vertices2)[:, 0],
+                   np.vstack(vertices1 + vertices2)[:, 1],
+                   np.vstack(vertices1 + vertices2)[:, 2], color='k')
+
         ax.set_xlabel("X")
         ax.set_ylabel("Y")
         ax.set_zlabel("Z")
         ax.set_title(title)
-        plt.show()
+
+        # Handle interactivity
+        if interactive:
+            ax.view_init(elev=20, azim=30)
+            plt.ion()
+        else:
+            plt.ioff()
+
+        plt.show(block=True)

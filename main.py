@@ -9,9 +9,12 @@ import pandas as pd
 import torch
 
 
-
+from helping_function.plot.CustomPlotClass import CustomPlotClass
 
 if __name__ == "__main__":
+
+
+    
     # test_rectangle()
     # test_sphere()
     # benchmark = read_benchmark("steam")
@@ -35,7 +38,7 @@ if __name__ == "__main__":
     # print("Sample outputs:\n", Y.numpy())
 
     benchmark = SteamGovernor()
-    benchmark.domain = Rectangle(lb=[-300,-300, -300], ub=[300,300,300])
+    #benchmark.domain = Rectangle(lb=[-300,-300, -300], ub=[300,300,300])
     X = benchmark.get_data(10000000)
     # Compute outputs
     Y_list = [benchmark.f(x.tolist()) for x in X]
