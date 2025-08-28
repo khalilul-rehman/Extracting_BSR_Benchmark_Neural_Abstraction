@@ -69,6 +69,8 @@ def constrained_optimization_gurobi(X_leaf, y_leaf):
 
 
 
+
+
 def get_leaf_samples(tree_model, X):
     leaf_indices = tree_model.apply(X)
     leaf_samples = defaultdict(list)
