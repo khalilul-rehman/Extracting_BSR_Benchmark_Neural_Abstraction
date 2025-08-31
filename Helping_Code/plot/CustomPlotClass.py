@@ -23,7 +23,7 @@ class CustomPlotClass:
         else:
             raise ValueError("Input must be a non-empty 2D numpy array.")
 
-    def drawConstraintsIn2D(self, min_max_bounds, title="Rectangular Representation of Constraints", dataPoints2D=None):
+    def drawConstraintsIn2D(self, min_max_bounds, title="Rectangular Representation of Constraints", dataPoints2D=None, savePath=None):
         """Draw 2D Hyperrectangles based on min/max bounds."""
         number_of_elements = min_max_bounds.shape[0]
         colors = plt.cm.tab10(np.linspace(0, 1, number_of_elements))
@@ -43,9 +43,11 @@ class CustomPlotClass:
         plt.xlabel("Feature 1")
         plt.ylabel("Feature 2")
         plt.axis("equal")
+        if savePath is not None:
+            plt.savefig(savePath, dpi=300)
         plt.show()
 
-    def draw2DHyperrectanglesWithVertices(self, verticesCellArray, title="2D Hyperrectangles", color=None, dataPoints2D=None):
+    def draw2DHyperrectanglesWithVertices(self, verticesCellArray, title="2D Hyperrectangles", color=None, dataPoints2D=None, savePath=None):
         """Draw 2D Hyperrectangles using vertex arrays."""
         plt.figure()
         if color is None:
@@ -65,10 +67,12 @@ class CustomPlotClass:
         plt.ylabel("Y")
         plt.title(title)
         plt.axis("equal")
+        if savePath is not None:
+            plt.savefig(savePath, dpi=300)
         plt.show()
 
 
-    def drawDual2DHyperrectanglesWithVertices(self, verticesCellArray1, verticesCellArray2, title="2D Hyperrectangles", color1=None, color2=None):
+    def drawDual2DHyperrectanglesWithVertices(self, verticesCellArray1, verticesCellArray2, title="2D Hyperrectangles", color1=None, color2=None, savePath=None):
         """Draw two sets of 2D Hyperrectangles together."""
         plt.figure()
         if color1 is None:
@@ -109,6 +113,8 @@ class CustomPlotClass:
         plt.ylabel("Y")
         plt.title(title)
         plt.axis("equal")
+        if savePath is not None:
+            plt.savefig(savePath, dpi=300)
         plt.show()
 
 
@@ -176,7 +182,7 @@ class CustomPlotClass:
 
     
     def draw3DHyperrectanglesWithVertices(self, vertices, title="3D Hyperrectangles",
-                                          color=None, interactive=False):
+                                          color=None, interactive=False, savePath=None):
         """Draw 3D Hyperrectangles with optional interactivity."""
         if not isinstance(vertices, list) or len(vertices) == 0:
             raise ValueError("Input must be a non-empty list of vertex arrays.")
@@ -211,13 +217,14 @@ class CustomPlotClass:
             plt.ion()
         else:
             plt.ioff()
-
+        if savePath is not None:
+            plt.savefig(savePath, dpi=300)
         plt.show(block=True)
 
     def drawDual3DHyperrectanglesWithVertices(self, vertices1, vertices2,
                                               title="Dual 3D Hyperrectangles",
                                               color1=None, color2=None,
-                                              interactive=False):
+                                              interactive=False, savePath=None):
         """Draw two sets of 3D Hyperrectangles together with optional interactivity."""
         if not isinstance(vertices1, list) or len(vertices1) == 0:
             raise ValueError("Input must be a non-empty list of vertex arrays.")
@@ -267,4 +274,6 @@ class CustomPlotClass:
         else:
             plt.ioff()
 
+        if savePath is not None:
+            plt.savefig(savePath, dpi=300)
         plt.show(block=True)
