@@ -3,3 +3,6 @@ venv/
 
 # Ignore all data files
 *.csv
+
+# Ignore all png files
+*.png
