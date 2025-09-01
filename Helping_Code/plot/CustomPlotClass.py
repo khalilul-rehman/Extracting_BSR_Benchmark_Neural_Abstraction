@@ -94,7 +94,7 @@ class CustomPlotClass:
             polygon = np.vstack([v1[hull.vertices], v1[hull.vertices[0]]])
             # c = color1[i] if isinstance(color1, list) else color1
             plt.fill(polygon[:,0], polygon[:,1], alpha=0.3, color=c)
-            plt.plot(polygon[:,0], polygon[:,1], c, linewidth=1.5)
+            plt.plot(polygon[:,0], polygon[:,1], color=c, linewidth=1.5)
 
 
             # hull1 = ConvexHull(v1)
@@ -105,7 +105,7 @@ class CustomPlotClass:
             polygon2 = np.vstack([v2[hull2.vertices], v2[hull2.vertices[0]]])
             # c = color2[i] if isinstance(color2, list) else color2
             plt.fill(polygon2[:,0], polygon2[:,1], alpha=0.3, color=c)
-            plt.plot(polygon2[:,0], polygon2[:,1], c, linewidth=1.5)
+            plt.plot(polygon2[:,0], polygon2[:,1], color=c, linewidth=1.5)
             # hull2 = ConvexHull(v2)
             # plt.plot(v2[hull2.vertices, 0], v2[hull2.vertices, 1], color=color2, linewidth=2)
 
