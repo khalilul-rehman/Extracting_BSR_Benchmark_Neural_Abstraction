@@ -58,7 +58,8 @@ def constrained_optimization_gurobi(X_leaf, y_leaf):
     model.optimize()
 
     # Extract results
-    if model.status == GRB.OPTIMAL:
+    #if model.status == GRB.OPTIMAL:
+    if model.status in [GRB.OPTIMAL, GRB.SUBOPTIMAL] or model.SolCount > 0:
         M_val = np.array([[M[k, j].X for j in range(n_features)] for k in range(n_outputs)])
         m0_val = np.array([m0[k].X for k in range(n_outputs)])
         h_val = h.X
