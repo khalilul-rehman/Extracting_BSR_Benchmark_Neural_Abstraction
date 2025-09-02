@@ -274,6 +274,7 @@ def generate_save_benchmark_dataset(benchmark_name: str, n_samples: int = 10000)
     if benchmark is None:
         raise ValueError(f"Benchmark '{benchmark_name}' not found!")
 
+    benchmark.domain = Rectangle([-1]*benchmark.dimension, [1]*benchmark.dimension)
     # Generate input data
     X = benchmark.get_data(n_samples)
     X = X.numpy()

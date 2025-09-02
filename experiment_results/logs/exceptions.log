@@ -1,0 +1,106 @@
+2025-09-01 16:32:20,678 - ERROR - No such comm target registered: jupyter.widget.control
+2025-09-02 12:35:43,594 - ERROR - Error in steam, 1000000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/2330758123.py", line 88, in <module>
+    nrmse_COF_model_tree_MSE_l2_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_MSE_l2, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 176, in predict_from_COF
+    y_pred[indices] = X_new[indices] @ M.T + m0
+AttributeError: 'NoneType' object has no attribute 'T'
+2025-09-02 12:40:03,410 - ERROR - Error in lin, 1000000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/3543170868.py", line 70, in <module>
+    nrmse_COF_model_tree_SSE_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_SSE, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 165, in predict_from_COF
+    n_outputs = next(iter(COF_model_tree))['CO_Model']['M'].shape[0]
+AttributeError: 'NoneType' object has no attribute 'shape'
+2025-09-02 12:41:39,395 - ERROR - Error in lin, 1000000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/2081924359.py", line 70, in <module>
+    nrmse_COF_model_tree_SSE_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_SSE, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 176, in predict_from_COF
+    y_pred[indices] = X_new[indices] @ M.T + m0
+AttributeError: 'NoneType' object has no attribute 'T'
+2025-09-02 12:42:20,584 - ERROR - Error in lin, 1000000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/3534474364.py", line 70, in <module>
+    nrmse_COF_model_tree_SSE_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_SSE, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 176, in predict_from_COF
+    y_pred[indices] = X_new[indices] @ M.T + m0
+AttributeError: 'NoneType' object has no attribute 'T'
+2025-09-02 12:44:43,495 - ERROR - Error in lin, 10000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/1340757385.py", line 70, in <module>
+    nrmse_COF_model_tree_SSE_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_SSE, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 165, in predict_from_COF
+    n_outputs = next(iter(COF_model_tree))['CO_Model']['M'].shape[0]
+AttributeError: 'NoneType' object has no attribute 'shape'
+2025-09-02 12:45:22,931 - ERROR - Error in lin, 10000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/1340757385.py", line 88, in <module>
+    nrmse_COF_model_tree_MSE_l2_training = normalized_root_mean_square_error(y_train, predict_from_COF(COF_model_tree_MSE_l2, X_train, tree))
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/QuadraticConstraintModel.py", line 176, in predict_from_COF
+    y_pred[indices] = X_new[indices] @ M.T + m0
+AttributeError: 'NoneType' object has no attribute 'T'
+2025-09-02 13:30:20,063 - ERROR - Error in exp, 1000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/768848945.py", line 112, in <module>
+    plotHyperrectanglesOfStateSpace(SSE_vertices_of_hyperrectangle,savePath=f"Dataset/{sys_name}/{sys_name}_{n_samples}/SSE partitions of state space.png", title=f"SSE partitions of state space {sys_name}_{n_samples}")
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/3769425775.py", line 5, in plotHyperrectanglesOfStateSpace
+    customPlot.draw2DHyperrectanglesWithVertices(
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/Helping_Code/plot/CustomPlotClass.py", line 57, in draw2DHyperrectanglesWithVertices
+    hull = ConvexHull(vertices)
+  File "_qhull.pyx", line 2425, in scipy.spatial._qhull.ConvexHull.__init__
+  File "_qhull.pyx", line 343, in scipy.spatial._qhull._Qhull.__init__
+scipy.spatial._qhull.QhullError: QH6421 qhull internal error (qh_maxsimplex): qh.MAXwidth required for qh_maxsimplex.  Used to estimate determinate
+
+While executing:  | qhull i Qt
+Options selected for Qhull 2019.1.r 2019/06/21:
+  run-id 997041737  incidence  Qtriangulate  _pre-merge  _zero-centrum
+  _max-width  0  Error-roundoff 8.2e-16  _one-merge 4.1e-15
+  _near-inside 2.1e-14  Visible-distance 1.6e-15  U-max-coplanar 1.6e-15
+  Width-outside 3.3e-15  _wide-facet 9.9e-15  _maxoutside 4.9e-15
+
+A Qhull internal error has occurred.  Please send the input and output to
+qhull_bug@qhull.org. If you can duplicate the error with logging ('T4z'), please
+include the log file.
+
+2025-09-02 13:57:35,497 - ERROR - Error in navigation_old, 500000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/329041778.py", line 58, in <module>
+    tree.fit(X_train, y_train)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/sklearn/base.py", line 1389, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 1404, in fit
+    super()._fit(
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/sklearn/tree/_classes.py", line 252, in _fit
+    X, y = validate_data(
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 2956, in validate_data
+    X = check_array(X, input_name="X", **check_X_params)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1139, in check_array
+    raise ValueError(
+ValueError: Found array with 0 feature(s) (shape=(449999, 0)) while a minimum of 1 is required by DecisionTreeRegressor.
+2025-09-02 14:02:53,399 - ERROR - Error in navigation_old, 500000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/2524975665.py", line 115, in <module>
+    plotHyperrectanglesOfStateSpace(SSE_vertices_of_hyperrectangle,savePath=f"Dataset/{sys_name}/{sys_name}_{n_samples}/SSE partitions of state space.png", title=f"SSE partitions of state space {sys_name}_{n_samples}")
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/3769425775.py", line 23, in plotHyperrectanglesOfStateSpace
+    constraints_on_leaves,
+NameError: name 'constraints_on_leaves' is not defined
+2025-09-02 14:05:34,588 - ERROR - Error in navigation_old, 500000
+Traceback (most recent call last):
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/2524975665.py", line 115, in <module>
+    plotHyperrectanglesOfStateSpace(SSE_vertices_of_hyperrectangle,savePath=f"Dataset/{sys_name}/{sys_name}_{n_samples}/SSE partitions of state space.png", title=f"SSE partitions of state space {sys_name}_{n_samples}")
+  File "/var/folders/2c/43cmhyln2s972415_6w44bhh0000gn/T/ipykernel_18639/99810705.py", line 27, in plotHyperrectanglesOfStateSpace
+    customPlot.draw3DHyperrectanglesWithVertices(
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/Helping_Code/plot/CustomPlotClass.py", line 201, in draw3DHyperrectanglesWithVertices
+    Poly3DCollection(faces, facecolors=faceColor,
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/mpl_toolkits/mplot3d/art3d.py", line 921, in __init__
+    super().__init__(verts, *args, **kwargs)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/matplotlib/collections.py", line 1200, in __init__
+    self.set_verts(verts, closed)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/mpl_toolkits/mplot3d/art3d.py", line 977, in set_verts
+    self.get_vector(verts)
+  File "/Users/khalilulrehman/Academic/Phd Italy 2023_26/University of LAquila/Research Papers tasks/Benchmarks_Systems/Robust Control for Dynamical Systems With Non-Gaussian Noise via Formal Abstractions/Neural Abstractions/venv/lib/python3.9/site-packages/mpl_toolkits/mplot3d/art3d.py", line 954, in get_vector
+    xs, ys, zs = np.vstack(segments3d).T
+ValueError: too many values to unpack (expected 3)
+2025-09-02 14:51:19,344 - ERROR - No such comm target registered: jupyter.widget.control
