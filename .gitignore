@@ -6,3 +6,6 @@ venv/
 
 # Ignore all png files
 *.png
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
